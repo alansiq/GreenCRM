@@ -1,31 +1,42 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './styles.css';
 
-export class NavMenu extends Component {
-  static displayName = NavMenu.name;
+const NavMenu = () => {
+  return (
+    <nav id="main-nav">
+      <header className="logo">
+        <img src="Logotipo.svg" alt="GreenCRM" />
+      </header>
 
-  constructor (props) {
-    super(props);
+      <main className="nav-content">
+        <ul>
+          <li>
+            <NavLink activeClassName="active" exact to="/">Dashboard</NavLink>
+          </li>
+        </ul>
+        <ul>
+          <small>CRM</small>
+          <li>
+            <NavLink activeClassName="active" to="/cadastrar-cliente">Cadastrar cliente</NavLink>
+          </li>
+          <li>
+            <NavLink activeClassName="active" to="/listar-clientes">Listar clientes</NavLink>
+          </li>
+        </ul>
+        <ul>
+          <small>PEDIDOS</small>
+          <li>
+            <NavLink activeClassName="active" to="/order">Criar orçamento</NavLink>
+          </li>
+          <li>
+            <NavLink activeClassName="active" to="/list-orders">Acompanhar orçamentos</NavLink>
+          </li>
+        </ul>
+      </main>
 
-    this.toggleNavbar = this.toggleNavbar.bind(this);
-    this.state = {
-      collapsed: true
-    };
-  }
-
-  toggleNavbar () {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  }
-
-  render () {
-    return (
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-      </nav>
-    );
-  }
+    </nav>
+  );
 }
+
+export default NavMenu;

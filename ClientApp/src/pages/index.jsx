@@ -1,5 +1,10 @@
 import Home from './Home';
-import About from './About';
+import ListarClientes from './ListarClientes';
+import CadastrarCliente from './CadastrarCliente';
 
-export {About};
-export {Home};
+
+export {
+    Home,
+    ListarClientes,
+    CadastrarCliente
+}

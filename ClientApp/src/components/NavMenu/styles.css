@@ -1,18 +1,54 @@
-﻿a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿#main-nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  gap: 64px;
+
 }
 
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+
+.logo {
+  margin-top: 64px;
+  align-self: center;
 }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+
+.nav-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-left: 24px;
+}
+
+.nav-content a {
+  display: flex;
+  padding: 8px 16px;
+  border-radius: 8px 0px 0px 8px;
+
+  transition: all 0.1s;
+
+  color: #A7A7A7;
+  text-decoration: none;
+}
+
+.nav-content a:hover {
+  background: #626262;
+  
+}
+
+.nav-content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-content ul li {
+  list-style: none;
+}
+
+.nav-content .active {
+  color: #fff;
+  background: #626262;
 }
